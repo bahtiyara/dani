@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>Detail</title>
+    <link rel="stylesheet" href="./style/detail.css" type="text/css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- header -->
+    <div class="header">
+      <div class="container">
+        <input placeholder="输入问题标题…">
+        <a onclick="return toggleVisibility('menu');"><img src="./img/more.svg"></a>
+        <div id="menu">
+          <ul>
+            <li>删除问题</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- publisher -->
+    <div class="publisher">
+      <div class="container">
+          <textarea rows='1' placeholder="回答问题…" onkeyup="return toggleButton();"></textarea>
+          <button id="btn">发送</button>
+      </div>
+    </div>
+
+    <!-- content -->
+    <div class="container">
+      <div class="container2">
+        <textarea class='autoExpand' rows='3' data-min-rows='3' placeholder="输入问题描述…"></textarea>
+        <div class="divider"></div>
+        <div class="answers">
+          <div class="bubble">
+            Attending a trade show can be a very effective method of promoting your company and its products. And one of the most effective ways to optimize your trade show display and increase traffic to your booth is through the use of banner stands. A banner stand for your trade show display draws attention to your booth and helps you deliver your message to prospective clients, current customers and business contacts at what is usually a highly competitive event. Your trade show display should stand out from the crowd, and a banner stand is
+            <div class="delete-answer-wrapper">
+              <div class="delete-answer"></div>
+            </div>
+          </div>
+          <div class="bubble">
+            Attending a trade show can be a very effective method of promoting your company and its products. And one of the most effective ways to optimize your trade show display and increase traffic to your booth is through the use of banner stands. A banner stand for your trade show display draws attention to your booth and helps you deliver your message to prospective clients, current customers and business contacts at what is usually a highly competitive event. Your trade show display should stand out from the crowd, and a banner stand is
+            <div class="delete-answer-wrapper">
+              <div class="delete-answer"></div>
+            </div>
+          </div>
+          <div class="bubble">
+            Attending a trade show can be a very effective method of promoting your company and its products. And one of the most effective ways to optimize your trade show display and increase traffic to your booth is through the use of banner stands. A banner stand for your trade show display draws attention to your booth and helps you deliver your message to prospective clients, current customers and business contacts at what is usually a highly competitive event. Your trade show display should stand out from the crowd, and a banner stand is
+            <div class="delete-answer-wrapper">
+              <div class="delete-answer"></div>
+            </div>
+          </div>
+          <div class="bubble">
+            Attending a trade show can be a very effective.
+            <div class="delete-answer-wrapper">
+              <div class="delete-answer"></div>
+            </div>
+          </div>
+        </div>
+        <p class="footer">Copyright © 2017-2018 答你答疑</p>
+      </div>
+    </div>
+  </body>
+  <script src="./src/detail.js"></script>
+</html>

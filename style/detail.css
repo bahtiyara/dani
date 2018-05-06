@@ -1,0 +1,266 @@
+html, body, input, textarea, div, h1, h2, h3, h4, h5, h6{
+    padding: 0;
+    margin: 0;
+    font-family: 'PingFangSC-Regular';
+  }
+  
+  /******* General Style *******/
+  html{
+    background-color: #F5F5F5;
+  }
+  
+  .container{
+    width: calc(100% - 60px);
+    max-width: 800px;
+    height: 100%;
+    display: block;
+    margin: auto;
+    position: relative;
+  }
+  
+  /******* Header Style *******/
+  .header{
+    background: #03A9F4;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.20);
+    width: 100%;
+    height: 64px;
+    display: block;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+  }
+  
+  input{
+    font-size: 18px;
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    line-height: 64px;
+    font-weight: 100;
+    display: inline-block;
+    width: calc(100% - 60px);
+  }
+  
+  input:focus{
+    outline: none;
+  }
+  
+  input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: rgba(255,255,255,0.5);
+  }
+  
+  a{
+    display: block;
+    float: right;
+    border-radius: 4px;
+    line-height: 14px;
+    padding: 9px 16px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    margin-top: 14px;
+    margin-right: -16px;
+  }
+  
+  a:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  /* menu */
+  
+  #menu{
+    width: 252px;
+    height: 52px;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 7px 21px rgba(0, 0, 0, 0.1);
+    position: relative;
+    float: right;
+    margin-top: -7px;
+    transition: all 0.5s;
+    display: none;
+  }
+  
+  #menu ul{
+    margin: 6px 0;
+    padding: 0;
+  }
+  
+  #menu li{
+    font-size: 14px;
+    color: #FF4F3E;
+    line-height: 20px;
+    padding: 10px 16px;
+    list-style-type: none;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  
+  #menu li:hover{
+    background-color: #FF4F3E;
+    color: #fff;
+  }
+  
+  /* description */
+  
+  .container2{
+    margin-top: 80px;
+  }
+  
+  textarea{
+    width: 100%;
+    font-size: 14px;
+    color: #383838;
+    line-height: 22px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    font-weight: 100;
+    resize: none;
+    margin-bottom: -5px;
+  
+    display: block;
+    box-sizing: padding-box;
+    overflow: hidden;
+  }
+  
+  textarea:focus{
+    outline: none;
+  }
+  
+  textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #CCCCCC;
+  }
+  
+  /* divider */
+  
+  .divider{
+    width: 100%;
+    height: 1px;
+    background-color: #E5E5E5;
+    margin-top: 16px;
+  }
+  
+  /* answers */
+  
+  .answers{
+    margin-bottom: 256px;
+  }
+  
+  .bubble{
+    display: inline-block;
+    font-size: 14px;
+    color: #383838;
+    line-height: 22px;
+    background: #FFFFFF;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,0.05);
+    border-radius: 6px;
+    min-width: 112px;
+    padding: 16px 20px;
+    
+    position: relative;
+    margin-top: 30px;
+  }
+  
+  .delete-answer-wrapper{
+    display: none;
+    width: 108px;
+    height: 36px;
+    background-image: linear-gradient(90deg, rgba(255,255,255,0.00) 0%, #FFFFFF 57%);
+    border-radius: 0 4px 4px 0;
+  
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  
+  .delete-answer{
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url('../img/trash-light.svg') no-repeat center;
+    padding: 4px;
+    
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+  
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .bubble:hover .delete-answer-wrapper{
+    display: block;
+  }
+  
+  .delete-answer:hover{
+    background: url('../img/trash.svg') no-repeat center;
+  }
+  
+  /* publisher */
+  
+  .publisher{
+    background: #fff;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.05);
+    width: 100%;
+    display: block;
+    position: fixed;
+    z-index: 99;
+    bottom: 0;
+  }
+  
+  .publisher textarea{
+    display: inline-block;
+    width: calc(100% - 48px);
+    height: 22px;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 13px 0;
+    -webkit-transition: all 0.2s;
+  }
+  
+  .publisher textarea:focus{
+    height: 200px;
+    overflow: scroll;
+  }
+  
+  button{
+    display: none;
+    font-size: 14px;
+    color: #03A9F4;
+    line-height: 20px;
+    font-family: 'PingFangSC-Regular';
+    font-weight: 500;
+    padding: 8px 20px;
+    border: 0;
+    border-radius: 6px;
+    background-color: rgba(0,0,0,0);
+  
+    position: absolute;
+    bottom: 6px;
+    right: -20px;
+    
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  button:focus{
+    outline: none;
+  }
+  
+  button:hover{
+    background-color: #E9F2F7;
+  }
+  
+  button:active{
+    background-color: #dae9f1;
+  }
+  
+  /* footer */
+  
+  .footer{
+    margin-top: -100px;
+    text-align: center;
+    color: #E5E5E5;
+    font-size: 14px;
+  }
