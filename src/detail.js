@@ -82,3 +82,17 @@ function updateQuestion() {
         }
     });
 }
+
+// Delete question
+function deleteQuestion() {
+    $.ajax({
+        type: 'DELETE',
+        url: url,
+        success: function () {
+            window.location.href = "/";
+        },
+        error: function(err) {
+            console.log(err);
+        }
+    });
+}
