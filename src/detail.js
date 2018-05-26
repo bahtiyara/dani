@@ -34,4 +34,27 @@ function toggleButton() {
     }
 }
 
-// Showing and hiding delete button
+// Get request
+let id = window.location.href.slice(-24);
+let url = `https://cors-anywhere.herokuapp.com/https://dani-api.herokuapp.com/questions/${id}`;
+
+let title = document.getElementsByTagName('input')[0];
+let desc = document.getElementsByTagName('textarea')[1];
+let answers = document.getElementsByClassName('answers')[0];
+
+fetch(url)
+    .then( result => {
+        return result.json();
+    })
+    .then(data => {
+        title.value = data.title;
+        desc.value = data.desc;
+
+        // rending answers
+        for (let i = 0; i < data.answers.length; i++) {
+            let element = data.answers[i];
+            let item = `<div class="bubble">${element}<div class="delete-answer-wrapper"><div class="delete-answer"></div></div></div>`;
+            $(answers).append(item);
+        }
+    })
+    .catch(error => console.log(error));
