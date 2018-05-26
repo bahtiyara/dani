@@ -10,10 +10,10 @@ fetch(url)
     })
     .then(data => {
         for (let i = 0; i < data.length; i++) {
-            const element = data[i];
+            let element = data[i];
+            let item = `<li><a href="/question/${element._id}"><h3>${element.title}</h3><p>${element.desc}</p></a></li>`;
             
-            $(`<li><a href="/question/${element._id}"><h3>${element.title}</h3><p>${element.desc}</p></a></li>`)
-            .appendTo(list);
+            $(list).prepend(item);
         }
     })
     .catch(error => console.log(error));
