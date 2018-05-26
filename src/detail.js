@@ -58,3 +58,27 @@ fetch(url)
         }
     })
     .catch(error => console.log(error));
+
+// Update title and desc
+function updateQuestion() {
+    let input = document.getElementsByTagName('input')[0];
+    let textarea = document.getElementsByTagName('textarea')[1];
+    let data = {
+        title: input.value,
+        desc: textarea.value
+    }
+
+    // Make patch request
+    if (data.title === "") {
+        return alert('问题标题不能为空');
+    }
+    $.ajax({
+        type: 'PATCH',
+        url: url,
+        data: JSON.stringify(data),
+        contentType: "application/json",
+        error: function(err) {
+            console.log(err);
+        }
+    });
+}

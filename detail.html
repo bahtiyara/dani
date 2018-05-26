@@ -11,7 +11,7 @@
     <!-- header -->
     <div class="header">
       <div class="container">
-        <input placeholder="输入问题标题…">
+        <input placeholder="输入问题标题…" onfocusout="updateQuestion()">
         <a onclick="return toggleVisibility('menu');"><img src="./img/more.svg"></a>
         <div id="menu">
           <ul>
@@ -32,7 +32,7 @@
     <!-- content -->
     <div class="container">
       <div class="container2">
-        <textarea class='autoExpand' rows='3' data-min-rows='3' placeholder="输入问题描述…"></textarea>
+        <textarea class='autoExpand' rows='3' data-min-rows='3' placeholder="输入问题描述…" onfocusout="updateQuestion()"></textarea>
         <div class="divider"></div>
         <div class="answers"></div>
         <p class="footer">Copyright © 2017-2018 答你答疑</p>
