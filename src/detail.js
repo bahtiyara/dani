@@ -60,6 +60,30 @@ fetch(url)
         } catch (error) {
             
         }
+
+        // Delete answer
+        let tresh = document.getElementsByClassName('delete-answer');
+
+        for (let i = 0; i < tresh.length; i++) {
+            const element = tresh[i];
+            element.onclick = function () {
+                data.answers.splice(i, 1);
+                // update answers
+                $.ajax({
+                    type: 'PATCH',
+                    url: url,
+                    data: JSON.stringify(data),
+                    contentType: "application/json",
+                    success: function () {
+                        $('.answers').children().eq(i).remove();
+                    },
+                    error: function(err) {
+                        console.log(err);
+                    }
+                });
+            }
+        }
+
     })
     .catch(error => console.log(error));
 
@@ -117,14 +141,17 @@ function deleteQuestion() {
 
 // Add answer
 function addAnswer() {
+    // Get current value of publisher
     let val = document.getElementsByTagName('textarea')[0].value;
 
+    // Get all current answers
     $.ajax({
         type: 'GET',
         url: url,
         success: function (data) {
             let ans = data.answers;
             ans.push(val);
+            // update answers
             $.ajax({
                 type: 'PATCH',
                 url: url,
@@ -145,3 +172,4 @@ function addAnswer() {
         }
     });
 }
+
