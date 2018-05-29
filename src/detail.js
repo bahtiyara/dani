@@ -51,27 +51,20 @@ fetch(url)
         desc.value = data.desc;
 
         // rending answers
-        for (let i = 0; i < data.answers.length; i++) {
-            let element = data.answers[i];
-            let item = `<div class="bubble">${element}<div class="delete-answer-wrapper"><div class="delete-answer"></div></div></div>`;
-            $(answers).append(item);
+        try {
+            for (let i = 0; i < data.answers.length; i++) {
+                let element = data.answers[i];
+                let item = `<div class="bubble">${element}<div class="delete-answer-wrapper"><div class="delete-answer"></div></div></div>`;
+                $(answers).append(item);
+            }
+        } catch (error) {
+            
         }
     })
     .catch(error => console.log(error));
 
-// Update title and desc
-function updateQuestion() {
-    let input = document.getElementsByTagName('input')[0];
-    let textarea = document.getElementsByTagName('textarea')[1];
-    let data = {
-        title: input.value,
-        desc: textarea.value
-    }
-
-    // Make patch request
-    if (data.title === "") {
-        return alert('问题标题不能为空');
-    }
+// Update anything
+function update(data) {
     $.ajax({
         type: 'PATCH',
         url: url,
@@ -83,6 +76,18 @@ function updateQuestion() {
     });
 }
 
+// Update title and desc
+function updateQuestion() {
+    let data = {
+        title: title.value,
+        desc: desc.value
+    }
+    if (data.title === "") {
+        return alert('问题标题不能为空');
+    }
+    update(data);
+}
+
 // Delete question
 function deleteQuestion() {
     $.ajax({
@@ -90,6 +95,50 @@ function deleteQuestion() {
         url: url,
         success: function () {
             window.location.href = "/";
+        },
+        error: function(err) {
+            console.log(err);
+        }
+    });
+}
+
+// function getQuestion() {
+//     $.ajax({
+//         type: 'GET',
+//         url: url,
+//         success: function (data) {
+//             return data;
+//         },
+//         error: function(err) {
+//             console.log(err);
+//         }
+//     });
+// }
+
+// Add answer
+function addAnswer() {
+    let val = document.getElementsByTagName('textarea')[0].value;
+
+    $.ajax({
+        type: 'GET',
+        url: url,
+        success: function (data) {
+            let ans = data.answers;
+            ans.push(val);
+            $.ajax({
+                type: 'PATCH',
+                url: url,
+                data: JSON.stringify(data),
+                contentType: "application/json",
+                success: function () {
+                    let item = `<div class="bubble">${val}<div class="delete-answer-wrapper"><div class="delete-answer"></div></div></div>`;
+                    $(answers).append(item);
+                    document.getElementsByTagName('textarea')[0].value = "";
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });
         },
         error: function(err) {
             console.log(err);
