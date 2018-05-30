@@ -60,6 +60,8 @@ fetch(url)
         } catch (error) {
             
         }
+        // Hide loading
+        $('.loading-wrapper').hide();
 
         // Delete answer
         let tresh = document.getElementsByClassName('delete-answer');

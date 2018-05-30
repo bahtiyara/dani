@@ -281,3 +281,19 @@ html, body, input, textarea, div, h1, h2, h3, h4, h5, h6{
   left: 21px;
   top: 7px;
 }
+
+.loading-wrapper{
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #F5F5F5;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+}
+
+.detail{
+  position: relative;
+  margin: auto;
+  top: 200px;
+}
