@@ -18,3 +18,8 @@ fetch(url)
         }
     })
     .catch(error => console.log(error));
+
+jQuery(document).delegate("a:not(.studylink, .refresh, .highslide, .back)", "click", function(event){
+    window.location=this.getAttribute("href");
+    return false;
+});
