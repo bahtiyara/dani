@@ -198,6 +198,6 @@ function addAnswer() {
 }
 
 // double tab .bubble to show .delete-answer-wrapper
-jQuery('.bubble').on('tap', function() {
-    $('.delete-answer-wrapper').show();
-});
+$('.bubble').click(function() {
+    alert('sss');
+})
