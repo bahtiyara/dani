@@ -194,19 +194,12 @@ html, body, input, textarea, div, h1, h2, h3, h4, h5, h6{
   }
   
   @media only screen 
-  and (min-width : 481px){
+  and (min-width : 0px){
     .bubble:hover .delete-answer-wrapper{
       display: block;
     }
     .delete-answer:hover{
       background-image: url('../img/trash.svg');
-    }
-  }
-
-  @media only screen 
-  and (max-width : 480px){
-    .delete-answer-wrapper{
-      display: block;
     }
   }
   

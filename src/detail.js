@@ -60,6 +60,13 @@ fetch(url)
         } catch (error) {
             
         }
+
+        // double tab .bubble to show .delete-answer-wrapper
+        $('.bubble').click(function() {
+            $('.delete-answer-wrapper').hide();
+            $(this).children('.delete-answer-wrapper').show();
+        })
+
         // Hide loading
         $('.loading-wrapper').hide();
 
@@ -196,8 +203,3 @@ function addAnswer() {
         }
     });
 }
-
-// double tab .bubble to show .delete-answer-wrapper
-$('.bubble').click(function() {
-    alert('sss');
-})
