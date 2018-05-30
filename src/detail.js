@@ -197,3 +197,7 @@ function addAnswer() {
     });
 }
 
+// double tab .bubble to show .delete-answer-wrapper
+$('.bubble').doubletap(function() {
+    $('.delete-answer-wrapper').show();
+});

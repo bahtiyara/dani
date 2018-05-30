@@ -193,9 +193,13 @@ html, body, input, textarea, div, h1, h2, h3, h4, h5, h6{
     transition: all 0.2s;
   }
   
-  .bubble:hover .delete-answer-wrapper{
-    display: block;
+  @media only screen 
+  and (min-width : 1px){
+    .bubble:hover .delete-answer-wrapper{
+      display: block;
+    }
   }
+  
   
   .delete-answer:hover{
     background-image: url('../img/trash.svg');
