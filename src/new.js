@@ -7,6 +7,9 @@ function post() {
         title: input.value,
         desc: textarea.value
     }
+    // after click the button, hide the words, show the spinner
+    document.getElementsByTagName('a')[0].style.color = 'rgba(0,0,0,0)';
+    $('.createquestion').show();
 
     // Make post request
     $.ajax({
@@ -19,6 +22,8 @@ function post() {
         },
         error: function(err) {
             console.log(err);
+            document.getElementsByTagName('a')[0].style.color = '#fff';
+            $('.createquestion').hide();
         }
     });
 }

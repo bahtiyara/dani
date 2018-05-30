@@ -61,6 +61,7 @@ html, body, input, textarea, div, h1, h2, h3, h4, h5, h6{
     font-size: 14px;
     margin-top: 14px;
     margin-right: -16px;
+    position: relative;
   }
   
   a:hover{
@@ -264,3 +265,19 @@ html, body, input, textarea, div, h1, h2, h3, h4, h5, h6{
     color: #E5E5E5;
     font-size: 14px;
   }
+
+.loading{
+  display: block;
+  background: url('../img/loading.gif') no-repeat;
+  background-size: 100%;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  z-index: 1000;
+}
+
+.createquestion{
+  display: none;
+  left: 21px;
+  top: 7px;
+}
