@@ -198,12 +198,11 @@ html, body, input, textarea, div, h1, h2, h3, h4, h5, h6{
     .bubble:hover .delete-answer-wrapper{
       display: block;
     }
+    .delete-answer:hover{
+      background-image: url('../img/trash.svg');
+    }
   }
   
-  
-  .delete-answer:hover{
-    background-image: url('../img/trash.svg');
-  }
   
   /* publisher */
   
