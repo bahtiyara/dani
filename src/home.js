@@ -9,6 +9,7 @@ fetch(url)
         return result.json();
     })
     .then(data => {
+        $('.loading').hide();
         for (let i = 0; i < data.length; i++) {
             let element = data[i];
             let item = `<li><a href="/${element._id}"><h3>${element.title}</h3><p>${element.desc}</p></a></li>`;
