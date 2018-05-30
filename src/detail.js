@@ -69,6 +69,9 @@ fetch(url)
         for (let i = 0; i < tresh.length; i++) {
             const element = tresh[i];
             element.onclick = function () {
+                // show loading
+                $('.delete-answer').css('background-image', 'url(../img/loading.gif)');
+
                 data.answers.splice(i, 1);
                 // update answers
                 $.ajax({
@@ -78,8 +81,12 @@ fetch(url)
                     contentType: "application/json",
                     success: function () {
                         $('.answers').children().eq(i).remove();
+                        // hide loading
+                        $('.delete-answer').css('background-image', '');
                     },
                     error: function(err) {
+                        // hide loading
+                        $('.delete-answer').css('background-image', '');
                         console.log(err);
                     }
                 });
@@ -117,7 +124,7 @@ function updateQuestion() {
 // Delete question
 function deleteQuestion() {
     $('#menu li').css('color','rgba(0,0,0,0)');
-    $('.deleteanswer').show();
+    $('.deletequestion').show();
     $.ajax({
         type: 'DELETE',
         url: url,
@@ -126,7 +133,7 @@ function deleteQuestion() {
         },
         error: function(err) {
             $('#menu li').css('color','#FF4F3E');
-            $('.deleteanswer').hide();
+            $('.deletequestion').hide();
             console.log(err);
         }
     });

@@ -179,7 +179,10 @@ html, body, input, textarea, div, h1, h2, h3, h4, h5, h6{
     display: block;
     width: 16px;
     height: 16px;
-    background: url('../img/trash-light.svg') no-repeat center;
+    background-image: url('../img/trash-light.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 66.67%;
     padding: 4px;
     
     position: absolute;
@@ -195,7 +198,7 @@ html, body, input, textarea, div, h1, h2, h3, h4, h5, h6{
   }
   
   .delete-answer:hover{
-    background: url('../img/trash.svg') no-repeat center;
+    background-image: url('../img/trash.svg');
   }
   
   /* publisher */
