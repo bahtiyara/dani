@@ -116,6 +116,8 @@ function updateQuestion() {
 
 // Delete question
 function deleteQuestion() {
+    $('#menu li').css('color','rgba(0,0,0,0)');
+    $('.deleteanswer').show();
     $.ajax({
         type: 'DELETE',
         url: url,
@@ -123,6 +125,8 @@ function deleteQuestion() {
             window.location.href = "/";
         },
         error: function(err) {
+            $('#menu li').css('color','#FF4F3E');
+            $('.deleteanswer').hide();
             console.log(err);
         }
     });
