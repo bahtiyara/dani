@@ -19,7 +19,7 @@
         <a onclick="return toggleVisibility('menu');"><img src="./img/more.svg"></a>
         <div id="menu">
           <ul>
-            <li onclick="deleteQuestion()">删除问题<div class="loading deleteanswer"></div></li>
+            <li onclick="deleteQuestion()">删除问题<div class="loading deletequestion"></div></li>
           </ul>
         </div>
       </div>
@@ -30,6 +30,7 @@
       <div class="container">
           <textarea rows='1' placeholder="回答问题…" onkeyup="return toggleButton();"></textarea>
           <button id="btn" onclick="addAnswer()">发送</button>
+          <div class="loading sendanswer"></div>
       </div>
     </div>
 

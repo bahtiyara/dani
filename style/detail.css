@@ -307,7 +307,14 @@ html, body, input, textarea, div, h1, h2, h3, h4, h5, h6{
   margin-left: -9px;
 }
 
-.deleteanswer{
+.deletequestion{
   margin-top: -20px;
+  display: none;
+}
+
+.sendanswer{
+  position: absolute;
+  bottom: 15px;
+  right: 5px;
   display: none;
 }

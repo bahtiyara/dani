@@ -150,6 +150,10 @@ function addAnswer() {
     // Get current value of publisher
     let val = document.getElementsByTagName('textarea')[0].value;
 
+    // hide words, show loading
+    $('#btn').hide();
+    $('.sendanswer').show();
+
     // Get all current answers
     $.ajax({
         type: 'GET',
@@ -167,14 +171,21 @@ function addAnswer() {
                     let item = `<div class="bubble">${val}<div class="delete-answer-wrapper"><div class="delete-answer"></div></div></div>`;
                     $(answers).append(item);
                     document.getElementsByTagName('textarea')[0].value = "";
+
+                    // hide back the loading
+                    $('.sendanswer').hide();
                 },
                 error: function(err) {
                     console.log(err);
+                    // hide back the loading
+                    $('.sendanswer').hide();
                 }
             });
         },
         error: function(err) {
             console.log(err);
+            // hide back the loading
+            $('.sendanswer').hide();
         }
     });
 }
