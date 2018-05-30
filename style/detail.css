@@ -38,7 +38,8 @@ html, body, input, textarea, div, h1, h2, h3, h4, h5, h6{
     line-height: 64px;
     font-weight: 100;
     display: inline-block;
-    width: calc(100% - 60px);
+    width: calc(100% - 85px);
+    margin-left: 30px;
   }
   
   input:focus{
@@ -296,4 +297,13 @@ html, body, input, textarea, div, h1, h2, h3, h4, h5, h6{
   position: relative;
   margin: auto;
   top: 200px;
+}
+
+.back-btn{
+  display: block;
+  background: url('../img/back.svg') no-repeat;
+  padding: 18px;
+  background-position: 50%;
+  float: left;
+  margin-left: -9px;
 }
